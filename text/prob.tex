@@ -1,0 +1,95 @@
+\documentclass[UTF8, 11pt, a4paper]{article}
+\usepackage[cm]{sfmath}
+\usepackage{tabularx}
+\def\arraystretch{1.3}
+\usepackage[a4paper, top=3.18cm,bottom=3.81cm,left=2.54cm,right=2.54cm]{geometry}
+\usepackage{indentfirst}
+\setlength{\parskip}{6pt}
+\XeTeXlinebreaklocale "zh"
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+
+\usepackage{fontspec}
+\setmainfont{思源黑体}
+\SetSymbolFont{largesymbols}{normal}{OMX}{iwona}{m}{n}
+\setmonofont{Source Code Pro}
+
+\begin{document}
+
+\title{HSEFZ Practice Contest}
+\maketitle
+
+* 时间：3 小时
+\newpage
+
+\section*{Epiphany @ EFZ}
+
+The world around you is not what it seems.
+\newline\newline
+
+\subsection*{题目概况}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+题目名称 & A & B & C \\ \hline
+文件名 & anomalies.* & portals.* & links.* \\ \hline
+每个测试点时限 & 1 秒 & 1.5 秒 & 1 秒 \\ \hline
+测试点数目 & 20 & 20 & 50 \\ \hline
+每个测试点分值 & 5 & 5 & 2 \\ \hline
+运行内存上限 & 256 MB & 256 MB & 256 MB \\ \hline
+结果比较方式 & \multicolumn{3}{c|}{全文比较(过滤行末空格及文末回车)} \\ \hline
+\end{tabularx}
+
+\subsection*{编译命令（以第一题为例）}
+\begin{tabularx}{\textwidth}{|X|c|c|c|}
+\hline
+C & \multicolumn{3}{l|}{\texttt{gcc -o anomalies anomalies.c -lm}\makebox[5em]{}} \\ \hline
+C++ & \multicolumn{3}{l|}{\texttt{g++ -o anomalies anomalies.cpp -lm}\makebox[5em]{}} \\ \hline
+Pascal & \multicolumn{3}{l|}{\texttt{fpc anomalies}\makebox[5em]{}} \\ \hline
+\end{tabularx}
+\newpage
+
+% ========== Problem A ==========
+
+\section*{A. Anomalies \makebox[2.5em]{} \small{「anomalies.c/cpp/pas」}}
+Problem Description
+
+\subsection*{任务}
+Task Description
+
+\subsection*{输入 \makebox[0.5em]{} \small{「anomalies.in」}}
+\begin{itemize}
+    \item 第 $1$ 行：Nothing
+\end{itemize}
+
+\subsection*{输出 \makebox[0.5em]{} \small{「anomalies.out」}}
+\begin{itemize}
+    \item 第 $1$ 行：Nothing
+\end{itemize}
+
+\subsection*{样例}
+\subsubsection*{样例一}
+\begin{table}[h]\centering
+\begin{tabularx}{0.8 \textwidth}{|X|X|}
+\hline
+\texttt{\textbf{anomalies1.in}} & \texttt{\textbf{anomalies1.out}} \\ \hline
+{\ttfamily
+1
+} & {\ttfamily
+1
+}
+\\ \hline
+\end{tabularx}\end{table}
+
+\subsection*{数据规模与约定}
+对于所有任务，有 $T \geq 1, G_{1, 1} = 1$。
+
+\begin{table}[h]\centering
+\begin{tabularx}{0.85 \textwidth}{X|X|X|X} \hline
+测试点编号 & $T$         & $\max{G_{i, j}}$ & 附加条件 \\ \hline\hline
+24         & $= 50\,000$ & $\leq 150\,000$  & - \\ \hline
+25         & $= 50\,000$ & $\leq 10^9$      & - \\ \hline
+\end{tabularx}
+\end{table}
+
+\end{document}
+
