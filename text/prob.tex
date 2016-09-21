@@ -254,6 +254,87 @@ OXO\newline
 17 - 20    & $\leq 500$ & - \\ \hline
 \end{tabularx}
 \end{table}
+\newpage
+
+% ========== Problem C ==========
+
+\section*{C. \makebox[1em]{} Links \makebox[2.5em]{} \small{「links.c/cpp/pas」}}
+每一位特工都可以在门泉之间建立连线。据说，每当连线形成一个三角形，%
+它所包围的区域内便会形成一个控制场，其中人们的思想将会受到它的微小影响。
+
+Capricornus 发现了一群排列成环形的门泉，计划着在它们之间建立连线。%
+但是由于控制场有未知性和危险性，Capricornus 需要慎重考虑门泉之间连线的建立顺序，%
+以及占领这些门泉的顺序。
+
+将这些门泉按顺时针顺序依次编号为 $1, 2, \dots, N$，那么称 $i$ 号和 $i + 1$ 号门泉%
+是相邻的，$N$ 号和 $1$ 号门泉是相邻的。Capricornus 需要按一定顺序占领其中的任意 $K$ 个门泉%
+方能开始任务。一段（一个、多个或 $N$ 个）连续相邻的被占领门泉被 Capricornus 视作一个“团”（cluster）。
+
+Capricornus 按照人生经验判断，在整个占领的过程的\uwave{任意时刻}，形成“团”的数量不能超过 $G$ 个，%
+否则可能有导致连接线和控制场不稳定的风险。
+
+正沉迷于规划中的 Capricornus 想知道，有多少种满足条件的占领 $K$ 个门泉的顺序。%
+门泉是两两不同的，因此旋转后相同的方案不算作一种。
+
+\subsection*{任务}
+给定 $N$、$K$、$G$ 的值，计算满足条件的占领 $N$ 个门泉中 $K$ 个的方案数目除以 $10^9 + 7$ 的余数。
+
+\subsection*{输入 \makebox[0.5em]{} \small{「links.in」}}
+输入的第一行包含一个整数 $C^*$ 表示该测试点包含的数据组数。%
+不同组数据互相独立，两组数据间不包含多余的空行。
+
+每组数据的输入如下：
+\begin{itemize}
+    \item 第 $1$ 行：三个正整数，依次为：
+        门泉的数量 $N$；需要占领的门泉数 $K$；“团”的上限数目 $G$。
+\end{itemize}
+
+\subsection*{输出 \makebox[0.5em]{} \small{「links.out」}}
+\begin{itemize}
+    \item 第 $1 \sim C^*$ 行：%
+        第 $i$ 行包含一个正整数，表示第 $i$ 组数据中不同的方案数除以 $10^9 + 7$ 的余数。
+\end{itemize}
+\newpage
+
+\subsection*{样例}
+\subsubsection*{样例一}
+\begin{table}[h]\centering
+\begin{tabularx}{0.8 \textwidth}{|X|X|}
+\hline
+\texttt{\textbf{links1.in}} & \texttt{\textbf{links1.out}} \\ \hline
+{\ttfamily
+4\newline
+4 2 1\newline
+5 4 2\newline
+6 4 4\newline
+42 23 7
+} & {\ttfamily
+8\newline
+120\newline
+360\newline
+917668006
+}
+\\ \hline
+\end{tabularx}\end{table}
+
+在第一组数据中，满足条件占领的顺序有 1-2，2-3，3-4，4-1，1-4，4-3，3-2，2-1 共 8 种。
+
+在第三组数据中，以任意顺序占领任意 4 个门泉即符合要求，方案共 $6 \times 5 \times 4 \times 3 = 360$ 种。
+
+\subsection*{数据规模与约定}
+对于所有数据有 $1 \leq G \leq K \leq N$，$2 \leq N$。
+
+\begin{table}[h]\centering
+\begin{tabularx}{0.85 \textwidth}{X|X|X|X} \hline
+测试点编号 & $C^*$ & $N$           & 附加条件 \\ \hline\hline
+1 - 3      & $5$   & $\leq 8$      & $G = 1$ \\ \hline
+4 - 8      & $5$   & $\leq 8$      & - \\ \hline
+9 - 15     & $5$   & $\leq 20$     & - \\ \hline
+16 - 20    & $5$   & $\leq 2\,000$ & $G \leq 20$ \\ \hline
+21 - 23    & $5$   & $\leq 2\,500$ & - \\ \hline
+24 - 25    & $10$  & $\leq 2\,500$ & - \\ \hline
+\end{tabularx}
+\end{table}
 
 \end{document}
 
