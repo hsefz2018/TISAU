@@ -25,17 +25,10 @@ inline int nCr(int n, int m) {
 
 void work()
 {
-    memset(f, 0, sizeof f);
-
     scanf("%d%d%d", &n, &k, &g);
     if (k == n) k = n - 1;
 
-    fact[0] = fact_inv[0] = 1;
-    for (int i = 1; i <= n; ++i) {
-        fact[i] = (int64)fact[i - 1] * i _;
-        fact_inv[i] = inv(fact[i]);
-    }
-
+    memset(f, 0, sizeof f);
     f[0][0] = f[1][1] = 1;
     for (int i = 2; i <= k; ++i) {
         for (int j = 1; j <= g; ++j)
@@ -49,6 +42,12 @@ void work()
 
 int main()
 {
+    fact[0] = fact_inv[0] = 1;
+    for (int i = 1; i < MAXN; ++i) {
+        fact[i] = (int64)fact[i - 1] * i _;
+        fact_inv[i] = inv(fact[i]);
+    }
+
     int T; scanf("%d", &T);
     do work(); while (--T);
     return 0;
