@@ -6,7 +6,7 @@ static const int MAXN = 150005;
 
 int n, ct, m = 0;
 int h[MAXN * 3], g[MAXN][3];
-int d[MAXN];
+int d[MAXN * 3];
 
 template <typename T> int discretize(T *a, int *b, int n)
 {
@@ -22,7 +22,7 @@ template <typename T> int discretize(T *a, int *b, int n)
     return rk + 1;
 }
 
-int head[MAXN * 3], dest[MAXN * 3], next[MAXN * 3];
+int head[MAXN * 3], dest[MAXN * 6], next[MAXN * 6];
 inline void add_edge(int u, int v) {
     dest[m] = v; next[m] = head[u]; head[u] = m++;
     dest[m] = u; next[m] = head[v]; head[v] = m++;
