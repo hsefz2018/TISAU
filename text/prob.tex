@@ -22,7 +22,7 @@
 * 时间：3 小时
 \newpage
 
-\section*{Epiphany @ EFZ}
+\section*{Technology Intelligence See All Unbounded}
 
 世界并非如你所见。
 
@@ -53,8 +53,11 @@ XM 究竟会将人类引向何方？毁灭、启蒙，抑或是重生？
 测试点数目 & 20 & 20 & 50 \\ \hline
 每个测试点分值 & 5 & 5 & 2 \\ \hline
 运行内存上限 & 256 MB & 256 MB & 256 MB \\ \hline
-结果比较方式 & \multicolumn{3}{c|}{全文比较(过滤行末空格及文末回车)} \\ \hline
+结果比较方式 & \multicolumn{3}{c|}{全文比较（过滤行末空格及文末回车）} \\ \hline
 \end{tabularx}
+
+* 除特殊说明外，输入、输出文件的数字之间均以恰一个空格分隔，行末字符为
+Line Feed（\texttt{'\textbackslash n'}，ASCII 10），且该字符也存在于输入文件的最后一行末尾。
 
 \subsection*{编译命令（以第一题为例）}
 \begin{tabularx}{\textwidth}{|X|c|c|c|}
@@ -67,21 +70,47 @@ Pascal & \multicolumn{3}{l|}{\texttt{fpc anomalies.pas}\makebox[5em]{}} \\ \hlin
 
 % ========== Problem A ==========
 
-\section*{A. Anomalies \makebox[2.5em]{} \small{「anomalies.c/cpp/pas」}}
-Problem Description
+\section*{A. \makebox[1em]{} Anomalies \makebox[2.5em]{} \small{「anomalies.c/cpp/pas」}}
+在世界平静的外表下，XM 依旧以它不可知晓的规律运动着。%
+全球各地的大城市由于人口密集，往往能吸引大量 XM，而如此数量的 XM 不时会突然出现%
+无规律的猛烈扰动——人们称之为“XM 异常”。
+
+令研究者们费解的是，每次 XM 异常都恰好发生在互不相同的三个城市。%
+异常的发生时常伴随着一些东西吸引着每一位心怀大志的特工——丢失的数据、黑曜石之盾的碎片……%
+因此，两个阵营总会在异常到来之时展开激烈的争夺。
+
+Pisces 居住在一个名为新加坡的城市。根据 Niantic Project 的预测，%
+新加坡即将迎来发生在这里的又一次异常，伴随着恢复人工智能 ADA 的数据和能量。%
+为了在异常中作出更多的贡献，Pisces 收集了过去所有异常发生的地点并进行了分析。
+
+每一座城市都有一个独一无二的编号，其中新加坡的编号为 $1$。当一次异常在三个城市发生，%
+证明这三个城市存在着或多或少的未知联系（当然 Pisces 只需要关注其他城市与新加坡的联系）。%
+Pisces 用“相关度”值来衡量联系的强度。这个值由以下规则确定：
+\begin{itemize}
+    \item 新加坡的相关度为 $0$；
+    \item 如果一座城市和另一座相关度为 $x$ 的城市同时发生过一次异常，%
+        那么这座城市的相关度不会大于 $x + 1$；
+    \item 一座城市的相关度是所有可能取值中的最大值（这个值可以为无穷大）。
+\end{itemize}
 
 \subsection*{任务}
-Task Description
+给定 $N$ 次异常的发生地点，计算每座城市和新加坡的相关度值。
 
 \subsection*{输入 \makebox[0.5em]{} \small{「anomalies.in」}}
 \begin{itemize}
-    \item 第 $1$ 行：Nothing
+    \item 第 $1$ 行：一个正整数，XM 异常的发生次数 $N$。
+    \item 第 $2 \sim N+1$ 行：第 $i+1$ 行包含三个互不相同的正整数，%
+        发生第 $i$ 次异常的三个城市的编号 $G_{i,1}, G_{i,2}, G_{i,3}$。
 \end{itemize}
 
 \subsection*{输出 \makebox[0.5em]{} \small{「anomalies.out」}}
 \begin{itemize}
-    \item 第 $1$ 行：Nothing
+    \item 第 $1$ 行起：%
+        在所有发生过异常的城市中，按\uwave{编号从小到大}的顺序，%
+        每座城市占一行，包含两个正整数，依次为城市的编号和城市的相关度。%
+        如果相关度为无穷大，输出 $-1$。
 \end{itemize}
+\newpage
 
 \subsection*{样例}
 \subsubsection*{样例一}
@@ -90,21 +119,47 @@ Task Description
 \hline
 \texttt{\textbf{anomalies1.in}} & \texttt{\textbf{anomalies1.out}} \\ \hline
 {\ttfamily
-1
+7\newline
+1 2 3\newline
+4 2 5\newline
+4 6 5\newline
+7 1 2\newline
+8 7 9\newline
+10 8 11\newline
+12 13 14
 } & {\ttfamily
-1
+1 0\newline
+2 1\newline
+3 1\newline
+4 2\newline
+5 2\newline
+6 3\newline
+7 1\newline
+8 2\newline
+9 2\newline
+10 3\newline
+11 3\newline
+12 -1\newline
+13 -1\newline
+14 -1
 }
 \\ \hline
 \end{tabularx}\end{table}
 
+\subsubsection*{样例二}
+见附件中给出的 \texttt{\textbf{anomalies2.in}} 和 \texttt{\textbf{anomalies2.out}}。
+
 \subsection*{数据规模与约定}
-对于所有任务，有 $T \geq 1, G_{1, 1} = 1$。
+对于所有任务，有 $N \geq 1, G_{1, 1} = 1$。
 
 \begin{table}[h]\centering
 \begin{tabularx}{0.85 \textwidth}{X|X|X|X} \hline
-测试点编号 & $T$         & $\max{G_{i, j}}$ & 附加条件 \\ \hline\hline
-24         & $= 50\,000$ & $\leq 150\,000$  & - \\ \hline
-25         & $= 50\,000$ & $\leq 10^9$      & - \\ \hline
+测试点编号 & $N$             & $\max{G_{i,j}}$ & 附加条件 \\ \hline\hline
+1 - 3      & $\leq 10$       & $\leq 50$       & - \\ \hline
+4 - 8      & $\leq 1\,000$   & $\leq 3\,000$   & - \\ \hline
+9 - 14     & $\leq 150\,000$ & $\leq 450\,000$ & - \\ \hline
+15         & $= 150\,000$    & $= 450\,000$    & $G_{i,j}$ 互不相同 \\ \hline
+16 - 20    & $\leq 150\,000$ & $\leq 10^9$     & - \\ \hline
 \end{tabularx}
 \end{table}
 
