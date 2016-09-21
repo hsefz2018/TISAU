@@ -15,7 +15,8 @@ void work()
 {
     n = rand_int_between(n1, n2);
     m = rand_int_between(m1, m2);
-    t = rand_int_between(t1, t2);
+    if (t1 == 0 && t2 == 0) t = rand_int_between(1, n * m);
+    else t = rand_int_between(t1, t2);
     r = rand_int_between(r1, r2);
     printf("%d %d %d %d\n", n, m, t, r);
 
@@ -42,7 +43,6 @@ int main(int argc, char *argv[])
         &n1, &n2, &m1, &m2, &t1, &t2, &r1, &r2);
     scanf("%lf%lf%lf", &p_empty, &p_target, &p_obstacle);
     p_sum = p_empty + p_target + p_obstacle;
-    if (t1 == 0 && t2 == 0) { t1 = (n + m) / 2; t2 = 1e8; }
     printf("%d\n", T);
     do work(); while (--T);
 
