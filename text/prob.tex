@@ -19,7 +19,7 @@
 \title{HSEFZ Practice Contest}
 \maketitle
 
-* 时间：3 小时
+* 时间：18:00 - 21:00
 \newpage
 
 \section*{Technology Intelligence See All Unbounded}
@@ -147,7 +147,7 @@ Pisces 用“相关度”值来衡量各城市与自己所在城市联系的强�
 \end{tabularx}\end{table}
 
 \subsubsection*{样例二}
-见附件中给出的 \texttt{\textbf{anomalies2.in}} 和 \texttt{\textbf{anomalies2.out}}。
+见附件中给出的 \texttt{\textbf{anomalies/anomalies2.in}} 和 \texttt{\textbf{anomalies/anomalies2.out}}。
 
 \subsection*{数据规模与约定}
 对于所有测试点，有 $N \geq 1, G_{1, 1} = 1$。
@@ -167,7 +167,7 @@ Pisces 用“相关度”值来衡量各城市与自己所在城市联系的强�
 % ========== Problem B ==========
 
 \section*{B. \makebox[1em]{} 门泉探索 \makebox[2.5em]{} \small{「portals.c/cpp/pas」}}
-地球上有不少 XM 大量产出的地方，这些地方大都有名胜古迹、雕塑、喷泉或邮局——它们被称为“门泉”。
+地球上有不少 XM 大量产出的地方，这些地方大都有名胜古迹、雕塑、喷泉或邮局——它们被称为“门泉”（portals）。
 
 经过多年的努力，Libra 终于悟出了产生门泉的真谛——放置雕塑！%
 Libra 计划在街区内放置一些雕塑并使之成为门泉，来让他和友军收集到更多的 XM。
@@ -226,18 +226,18 @@ OXO\newline
 **O**
 } & {\ttfamily
 4\newline
-7
+8
 }
 \\ \hline
 \end{tabularx}\end{table}
 
 在第一组数据中，将两个雕塑放置于第 1 行第 1、3 列的格子可以为友军提供 4 单位的 XM。
 
-在第二组数据中，将三个雕塑放置于第 3 行第 3 列和第 1 行第 2、4 列可以为友军提供 %
-7 单位的 XM。也存在另外的方案可以提供同样数目的 XM。
+在第二组数据中，将三个雕塑放置于第 3 行第 2、3、4 列可以为友军提供 %
+$2 + 4 + 2 = 8$ 单位的 XM。也存在另外的方案可以提供同样数目的 XM。
 
 \subsubsection*{样例二}
-见附件中给出的 \texttt{\textbf{portals2.in}} 和 \texttt{\textbf{portals2.out}}。
+见附件中给出的 \texttt{\textbf{portals/portals2.in}} 和 \texttt{\textbf{portals/portals2.out}}。
 
 \subsection*{数据规模与约定}
 对于所有测试点，有 $C^* = 5$；对于所有数据有 $1 \leq N, M$，$1 \leq T, R \leq 10^8$，%
@@ -268,7 +268,7 @@ Capricornus 发现了一群排列成环形的门泉，计划着在它们之间�
 
 将这些门泉按顺时针顺序依次编号为 $1, 2, \dots, N$，那么称 $i$ 号和 $i + 1$ 号门泉%
 是相邻的，$N$ 号和 $1$ 号门泉是相邻的。Capricornus 需要按一定顺序占领其中的任意 $K$ 个门泉%
-方能开始任务。一段（一个、多个或 $N$ 个）连续相邻的被占领门泉被 Capricornus 视作一个“团”（cluster）。
+方能开始任务。一段（一个、多个或 $N$ 个）连续相邻的被占领门泉被 Capricornus 视作一个“团”。
 
 Capricornus 按照人生经验判断，在整个占领的过程的\uwave{任意时刻}，形成“团”的数量不能超过 $G$ 个，%
 否则可能有导致连接线和控制场不稳定的风险。例如当 $G = 1, N = 4$ 时，1-3-2 的占领顺序便是%
