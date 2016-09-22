@@ -36,14 +36,14 @@ int main(int argc, char *argv[])
         if (max_g > n * 3) {
             do {
                 mapped[0] = 0;
-                for (int i = 1; i < n * 6; ++i) mapped[i] = rand() % max_g;
+                for (int i = 1; i < n * 6; ++i) mapped[i] = rand() % (max_g - 1) + 1;
                 std::sort(mapped + 1, mapped + n * 6);
                 if (std::unique(mapped + 1, mapped + n * 6) - &mapped[0] >= n * 3) {
                     std::random_shuffle(mapped + 1, mapped + n * 6);
                     break;
                 }
             } while (1);
-        } else for (int i = 0; i < max_g; ++i) mapped[i] = i;
+        } else for (int i = 0; i < n * 3; ++i) mapped[i] = i;
         do rand_distinct_2(g[1], g[2]); while (g[1] == 0 || g[2] == 0);
         for (int i = 1; i < n; ++i) rand_distinct_3(g[i * 3], g[i * 3 + 1], g[i * 3 + 2]);
         for (int i = 0; i < n * 3; ++i) g[i] = mapped[g[i]];

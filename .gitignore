@@ -1,9 +1,12 @@
 backups/
+lemon/data/
+lemon/source/
 
 *.in
 *.out
 *.ans
 
+*.zip
 *.pdf
 *.aux
 *.log
