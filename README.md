@@ -1,6 +1,9 @@
 # Technology Intelligence See All Unbounded
 
-There you go (/- -)/
+麻麻我的因格瑞斯和他们不一样
+
+[原题](https://vijos.org/tests/5404825e48c5fcd4578b457a)  
+orz xiaodao & 感谢 dilutedream 的题目建议
 
 ### Known issues
 
